@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
     box-sizing: border-box;
 }
 
@@ -12,34 +11,37 @@ html, body {
 
 body {
     overflow: hidden;
-    background-color: #ffffff;
-    font-family: "Comic Sans MS", "Segoe UI", cursive;
+    font-family: "Comic Sans MS", cursive;
+
+    /* 🌸 FULL BACKGROUND IMAGE */
+    background-image: url("../images/perfect.jpg");
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
 }
 
+/* Container */
 .container {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-/*---------------------- body_left -------------------------*/
+/* Left GIF */
 .body_left {
     width: 300px;
-    height: 300px;
     position: absolute;
     left: 0;
     bottom: 110px;
-    z-index: 98;
+    z-index: 5;
 }
 
 .body_left img {
     width: 100%;
-    height: auto;
 }
-/*---------------------- body_left -------------------------*/
 
-
-/*---------------------- body_center -------------------------*/
+/* Heart animation center */
 .container .love {
     width: 520px;
     height: 440px;
@@ -55,64 +57,42 @@ body {
     visibility: hidden;
 }
 
+/* 💖 BIGGER HEARTS (Visible Now) */
 .love .block div {
-    width: 40px;
-    height: 40px;
+    width: 110px;   /* Increased from 40px */
+    height: 110px;  /* Increased from 40px */
+
     position: absolute;
-    background: url("../images/heart.jpg") no-repeat center;
+
+    background: url("../images/hearteu.png") no-repeat center;
     background-size: contain;
 }
-/*---------------------- body_center -------------------------*/
 
-
-/*---------------------- footer -------------------------*/
-.footer {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    z-index: 99;
-}
-
-.footer .copyright {
-    width: 100%;
-    height: 30px;
-    position: absolute;
-    bottom: -30px;
-    text-align: center;
-}
-
-.copyright div {
-    width: 30%;
-    line-height: 30px;
-    display: inline-block;
-}
-
-.copyright div span {
-    color: dimgray;
-}
-/*---------------------- footer -------------------------*/
-
-
-/*---------------------- FINAL MESSAGE -------------------------*/
+/* 💖 FINAL MESSAGE */
 .final-message {
     position: fixed;
-    bottom: 80px;
+    bottom: 120px;
     width: 100%;
     text-align: center;
 
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 
-    font-family: "Comic Sans MS", "Segoe UI", cursive;
+    /* Your chosen color */
+    color: #781065;
 
-    color: #e60073;  /* Soft magenta pink */
+    /* Matching glow */
+    text-shadow:
+        0 0 6px rgba(120, 16, 101, 0.6),
+        0 0 12px rgba(120, 16, 101, 0.5),
+        0 0 20px rgba(120, 16, 101, 0.4);
 
     opacity: 0;
     transform: translateY(40px);
     transition: all 2s ease;
 
-    z-index: 100;
+    z-index: 10;
 }
 
 .show-message {

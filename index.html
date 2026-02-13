@@ -3,49 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Dear Anika & Nafu</title>
-    <meta name="language" content="en-US">
-    <meta name="title" content="Dear Nafu">
-    <meta name="description" content="Collecting this wasn't easy — your star is my motivation to keep going! Contributions are welcome too.">
-
-    <link rel="icon" type="image/x-icon"
-          href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
 
     <link rel="stylesheet" href="css/love.css">
 </head>
 
 <body>
 
-    <!-- Background music -->
-    <audio id="audios" loop>
+    <!-- Background Music -->
+    <audio id="audios" loop autoplay muted>
         <source src="MP3/11.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Auto play after first click -->
+    <!-- Try autoplay -->
     <script>
         window.addEventListener("load", function () {
-
             const audio = document.getElementById("audios");
-
-            function startAudio() {
-                audio.play().then(() => {
-                    console.log("Audio started");
-                }).catch(err => {
-                    console.log("Audio error:", err);
-                });
-
-                document.removeEventListener("click", startAudio);
-            }
-
-            document.addEventListener("click", startAudio);
+            audio.muted = false;
+            audio.play().catch(() => {
+                document.addEventListener("click", () => {
+                    audio.play();
+                }, { once: true });
+            });
         });
     </script>
 
-
     <!-- Main animation content -->
-    <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
+    <div class="container">
 
         <div class="body_left">
-            <img src="images/biubiubiu.gif" alt="" ondragstart="return false;">
+            <img src="images/biubiubiu.gif" alt="">
         </div>
 
         <div class="body_center love">
@@ -59,31 +45,26 @@
 
     </div>
 
-
-    <div class="footer">
-        <div class="border">
-            <div class="border-top"></div>
-            <div class="border-bottom"></div>
-        </div>
-    </div>
-
-
-    <!-- 💖 FINAL MESSAGE (Hidden Initially) -->
+    <!-- 💖 FINAL MESSAGE -->
     <div id="finalMessage" class="final-message">
-        A smol trial to make you happy ฅ^>⩊<^ ฅ love you loadsss! 💖<br>
-        with biu biuuu ~ Sabupuchkii ⋆｡‧˚ʚ🍓ɞ˚‧｡⋆
+        what else can make you happy except seeing my face? huh?? ฅ^>⩊<^ ฅ 💖<br>
+        with loads of love & biu biuuu 
+        ~ Sabupuchkii ⋆｡‧˚ʚ🍓ɞ˚‧｡⋆
     </div>
 
+    <!-- 🍹 HELLO KITTY JUICE (hidden first) -->
+    <img id="helloJuice" class="hello-juice"
+         src="images/cutie hk.jpg"
+         alt="Hello Kitty">
 
-    <!-- your animation JS -->
     <script src="js/love.js"></script>
 
-    <!-- Show final message after animation ends -->
+    <!-- Show final message + juice image after animation -->
     <script>
-        // Change 15000 to match your animation duration
         setTimeout(function () {
             document.getElementById("finalMessage").classList.add("show-message");
-        }, 15000);
+            document.getElementById("helloJuice").classList.add("show-juice");
+        }, 15000);  // change if needed
     </script>
 
 </body>
