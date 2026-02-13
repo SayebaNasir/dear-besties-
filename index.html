@@ -37,7 +37,6 @@
             }
 
             document.addEventListener("click", startAudio);
-
         });
     </script>
 
@@ -68,8 +67,24 @@
         </div>
     </div>
 
+
+    <!-- 💖 FINAL MESSAGE (Hidden Initially) -->
+    <div id="finalMessage" class="final-message">
+        A smol trial to make you happy, love you loadsss! 💖<br>
+        with biu biuuu ~ Sabupuchkii ✨
+    </div>
+
+
     <!-- your animation JS -->
     <script src="js/love.js"></script>
+
+    <!-- Show final message after animation ends -->
+    <script>
+        // Change 15000 to match your animation duration
+        setTimeout(function () {
+            document.getElementById("finalMessage").classList.add("show-message");
+        }, 15000);
+    </script>
 
 </body>
 </html>
